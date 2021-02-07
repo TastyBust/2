@@ -25,12 +25,19 @@
 </template>
 <script>
 export default {
+    data:()=>({
+         login:"",
+    password:"",  
+    
+ }),
  methods:{
   authenticate(){
 this.axios.get("http://37.77.104.246/api/jsonstorage/?id=2716ef404c324ddc5c9fea59215e724a").then(response =>{
  let users = response.data;
  let found = false;
+
  for (let index in users){
+     
    if (this.login == users[index].login&& this.password == users[index].password){
      this.$router.push('/users/' + this.myId);
      found =  true;
@@ -42,5 +49,6 @@ this.axios.get("http://37.77.104.246/api/jsonstorage/?id=2716ef404c324ddc5c9fea5
 })
    }
  }
+    
 }
 </script>
