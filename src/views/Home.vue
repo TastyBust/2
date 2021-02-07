@@ -15,7 +15,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 export default {
  methods:{
    click:function(){
-this.axios.get("http://37.77.104.246/api/jsonstorage/?id=7c1ddaec79baa8a4f419449d062a24a7").then(response =>{
+this.axios.get("http://37.77.104.246/api/jsonstorage/?id=2716ef404c324ddc5c9fea59215e724a").then(response =>{
     console.log(response.data);
 })
    }
