@@ -9,7 +9,7 @@ import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
-id:"",
+id:-1,
 login:"",
   components: {
   
@@ -17,12 +17,13 @@ login:"",
   methods:{
 login: function (id,login){
   this.id = id;
+  alert(id);
   this.login = login;
 
 },
 updateUser: function(){
  
-if (this.id=="") this.$router.push('/users/' + this.id); else this.$router.push('/login');
+if (this.id!=-1) this.$router.push('/users/' + this.id); else this.$router.push('/login');
 }
 
   },
@@ -34,3 +35,4 @@ if (this.id=="") this.$router.push('/users/' + this.id); else this.$router.push(
 };
 
 </script>
+
