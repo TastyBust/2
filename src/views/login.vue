@@ -39,7 +39,7 @@ this.axios.get("http://37.77.104.246/api/jsonstorage/?id=2716ef404c324ddc5c9fea5
  for (let index in users){
      
    if (this.login == users[index].login&& this.password == users[index].password){
-       this.$emit('login',index,users[index].login);
+       this.$emit('login',users[index]);
      this.$router.push('/users/' + index);
      found =  true;
      break;

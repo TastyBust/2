@@ -1,6 +1,9 @@
 <template>
   <v-app>
-  <router-view v-on:login="updateUser" />
+    <router-link to="/">Главная</router-link>
+        <router-link v-if="users==''" to="/login">Вход</router-link>
+            <router-link v-else :to="`/users/${users.login}`">{{users.name}}</router-link>
+  <router-view v-on:login="mylogin" />
   </v-app>
 </template>
 
@@ -8,22 +11,17 @@
 import HelloWorld from './components/HelloWorld';
 
 export default {
-  name: 'App',
-id:-1,
-login:"",
-  components: {
-  
-  },
-  methods:{
-login: function (id,login){
-  this.id = id;
-  alert(id);
-  this.login = login;
-
+data(){
+  return {
+    users:'',
+    
+  }
 },
-updateUser: function(){
- 
-if (this.id!=-1) this.$router.push('/users/' + this.id); else this.$router.push('/login');
+  methods:{
+mylogin($login){
+//this.users=$login;
+//console.log(this.users);
+console.log($login);
 }
 
   },
